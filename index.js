@@ -64,7 +64,7 @@ const questions = [
     //     type: 'list',
     //     message: 'Choose a license for application',
     //     name: 'license_choice',
-    //     choices: ['choice1', 'choice2', 'choice3'],
+    //     choices: ['Apache 2.0', 'IBM', 'ISC','MIT'],
     // },
     // {
     //     type: 'input',

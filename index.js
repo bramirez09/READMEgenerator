@@ -13,6 +13,12 @@ function generateMarkdown(data) {
 
     
     ## Table of Contents
+    *[Installation](#installation)
+    *[Usage](#usage)
+    *[Contribution](#contribution)
+    *[Tests](#tests)
+    *[License](#license)
+    *[Questions](#question)
 
 
     ## Installation 
@@ -96,7 +102,7 @@ const questions = [
     },
 ]
 // license function
-const renderLicense = (license) => {
+function renderLicense(license){
     if (license == "MIT") {
       return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
     } else if (license == "Apache 2.0") {

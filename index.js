@@ -18,7 +18,7 @@ ${data.project_description}
 * [Contribution](#contribution)
 * [Tests](#tests)
 * [License](#license)
-* [Questions](#question)
+* [Questions](#questions)
 
 
 ## Installation 

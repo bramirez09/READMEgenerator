@@ -6,47 +6,47 @@ const inquirer = require('inquirer');
 function generateMarkdown(data) {
     return `# ${data.project_title}
 
-    ${renderLicense(data.license_choice)}
-
-    ## Description:
-     ${data.project_description}
-
+${renderLicense(data.license_choice)}
     
-    ## Table of Contents
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [Contribution](#contribution)
-    * [Tests](#tests)
-    * [License](#license)
-    * [Questions](#question)
+## Description:
+${data.project_description}
 
 
-    ## Installation 
-     ${data.installation_instruction}
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contribution](#contribution)
+* [Tests](#tests)
+* [License](#license)
+* [Questions](#question)
 
 
-    ## Usage:
-     ${data.usage_information}
+## Installation 
+${data.installation_instruction}
 
 
-    ## Contribution: 
-     ${data.contribution_guidelines}
+## Usage:
+${data.usage_information}
 
 
-    ## Tests:
-     ${data.test_instructions}
+## Contribution: 
+${data.contribution_guidelines}
 
 
-    ## License:
-     The product is license under ${data.license_choice}.
+## Tests:
+${data.test_instructions}
+
+
+## License:
+The product is license under ${data.license_choice}.
      
 
 
-    ## Questions
-    For any questions, please contact me @ 
-    https://github.com/${data.Github_username}
-    or
-    Email: ${data.email}
+## Questions
+For any questions, please contact me @ 
+https://github.com/${data.Github_username}
+or
+Email: ${data.email}
   `;
 }
 

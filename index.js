@@ -6,19 +6,19 @@ const inquirer = require('inquirer');
 function generateMarkdown(data) {
     return `# ${data.project_title}
 
-    ${renderLicense(data.license)}
+    ${renderLicense(data.license_choice)}
 
     ## Description:
      ${data.project_description}
 
     
     ## Table of Contents
-    *[Installation](#installation)
-    *[Usage](#usage)
-    *[Contribution](#contribution)
-    *[Tests](#tests)
-    *[License](#license)
-    *[Questions](#question)
+    * [Installation](#installation)
+    * [Usage](#usage)
+    * [Contribution](#contribution)
+    * [Tests](#tests)
+    * [License](#license)
+    * [Questions](#question)
 
 
     ## Installation 
@@ -48,7 +48,7 @@ function generateMarkdown(data) {
     or
     Email: ${data.email}
   `;
-  }
+}
 
 
 
@@ -102,23 +102,23 @@ const questions = [
     },
 ]
 // license function
-function renderLicense(license){
+function renderLicense(license) {
     if (license == "MIT") {
-      return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+        return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
     } else if (license == "Apache 2.0") {
-      return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+        return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
     } else if (license == "IBM") {
-      return "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)";
+        return "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)";
     } else if (license == "None") {
-      return "No Licenses were used.";
+        return "No Licenses were used.";
     } else {
-      return "";
+        return "";
     }
-  };
+};
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    console.log(fileName,data);
+    console.log(fileName, data);
     fs.writeFile(fileName, data, err => {
         if (err) {
             return console.log(err);
@@ -130,13 +130,13 @@ function writeToFile(fileName, data) {
 
 
 // TODO: Create a function to initialize app
-function init() { 
+function init() {
     inquirer.prompt(questions)
-    .then ((answers) => {
-        const contentForMd = generateMarkdown (answers);
-        //console.log(contentForMd);
-        writeToFile("./utils/READMEsample.md",contentForMd);
-    })
+        .then((answers) => {
+            const contentForMd = generateMarkdown(answers);
+            //console.log(contentForMd);
+            writeToFile("./utils/READMEsample.md", contentForMd);
+        })
 }
 //^ call inquire .prompt ().then
 // invoke writeToFile (readme.md, )
